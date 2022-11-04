@@ -80,7 +80,14 @@ app.get('/updateemployee/:id', (req, res) => {
 })
 
 //Delete Employee
-
+app.get('/deleteemployee/:id', (req, res) => {
+    let sql = `DELETE FROM employee WHERE id = ${req.params.id}`;
+    let query = db.query(sql, err => {
+        if(err) {
+            throw err
+        }
+        res.send('Employee Deleted')
+})
 
 app.listen('3000', () => {
     console.log('Server Started on Port 3000')
