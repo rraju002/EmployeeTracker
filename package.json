@@ -1,0 +1,23 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "Employee Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rraju002/EmployeeTracker.git"
+  },
+  "author": "Rhowen Raju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rraju002/EmployeeTracker/issues"
+  },
+  "homepage": "https://github.com/rraju002/EmployeeTracker#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
