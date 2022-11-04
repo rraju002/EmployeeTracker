@@ -7,7 +7,7 @@ const db = mysql.createConnection({
     user: 'root', 
     password: '',
     databse: 'nodemysql'
-})
+});
 
 //Connect to MYSQL
 db.connect((err) => {
@@ -52,8 +52,8 @@ app.get('/employee1', (req, res) => {
             throw err
         }
         res.send('Employee Added')
-    })
-})
+    });
+});
 
 //Select Employee
 app.get('./getemployee', (req, res) => {
@@ -64,8 +64,8 @@ app.get('./getemployee', (req, res) => {
         }
         console.log(results)
         res.send('Employee details received')
-    })
-})
+    });
+});
 
 //update employee
 app.get('/updateemployee/:id', (req, res) => {
@@ -76,19 +76,21 @@ app.get('/updateemployee/:id', (req, res) => {
             throw err
         }
         res.send('Employee updated')
-    })
-})
+    });
+});
 
 //Delete Employee
-app.get('/deleteemployee/:id', (req, res) => {
+app.get("/deleteemployee/:id", (req, res) => {
     let sql = `DELETE FROM employee WHERE id = ${req.params.id}`;
-    let query = db.query(sql, err => {
-        if(err) {
-            throw err
-        }
-        res.send('Employee Deleted')
-})
+    let query = db.query(sql, (err) => {
+      if (err) {
+        throw err;
+      }
+      res.send("Employee deleted");
+    });
+  });
+
 
 app.listen('3000', () => {
     console.log('Server Started on Port 3000')
-})
+});
