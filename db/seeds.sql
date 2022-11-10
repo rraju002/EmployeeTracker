@@ -17,6 +17,8 @@ INSERT INTO roles
 ("Secretary", 60000, 3),
 ("Intern", 20000, 4),
 
+--add employee func; FN, LN, & role id
+
 INSERT INTO employees
 (first_name, last_name, role_id)
 ("Naruto Uzumaki", 1),
