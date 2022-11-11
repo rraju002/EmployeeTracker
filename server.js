@@ -6,10 +6,10 @@ const db = require("./index")
 const connection = mysql.createConnection({
     host: 'localhost',
     //Port Connection
-    port: 3306,
+    port: 3000,
 
     //Username
-    user: 'root',
+    user: 'Rhowen',
 
     //Password
     password: 'Team7',
@@ -37,7 +37,34 @@ const menu = [
     {
         type: "list",
         name: "first_name",
-        message: "What is the employee's first name?"
+        message: "What is the shinobi's first name?"
     }
 
+]
+
+//Add employee
+const addDepartment = [
+    {
+        type: "input",
+        message: "What department does this shinobi work for?",
+        name: "newDepartment",
+    }
+]
+
+//Add Role
+const addRole = [{
+    type: "input",
+    message: "What kind of shinobi is this?",
+    name: "newRole",
+},
+{
+    type: "input",
+    message: "How much does this shinobi make?",
+    name: "newRoleSalary",
+},
+{
+    type: "input",
+    message: "What department does this shinobi belong to?",
+    name: "newRoleDepartment",
+},
 ]
