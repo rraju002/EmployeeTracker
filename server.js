@@ -68,3 +68,61 @@ const addRole = [{
     name: "newRoleDepartment",
 },
 ]
+
+//Add Shinobi
+const addShinobi = [
+    {
+        type: "input",
+        message: "What is the shinobi's first name?",
+        name: "shinobiFirstName",
+    },
+    
+    {
+        type: "input",
+        message: "What is the shinobi's last name?",
+        name: "shinobiLastName",
+    },
+
+    {
+        type: "list",
+        message: "What is the shinobi's role?",
+        choices: ["Battle Shinobi", "Medical Shinobi", "Office Shinobi"],
+        name:"shinobiRole"
+    },
+    {
+        type: "list",
+        message: "Who is Hokagee?",
+        choices: ["Kakashi Hatake", "Lady Tsunade", "Naruto Uzumaki", "None" ],
+        name: "shinobiManager",
+    },
+]
+
+//Intialize Func
+async function init() {
+    let appRunning = true;
+    let userMenuPick = await inquirer.prompt(menu).then(data => {
+      return data.menu
+    });
+
+//App Continues to Run
+while (appRunning) {
+    switch (userMenuPick) {
+        case "View all Shinobi departments":
+            console.log("View all Shinobi departments")
+            appRunning = false
+            break;
+            case "View all roles":
+                appRunning = false
+                break;
+                case "View all Shinobi":
+                    console.log("View all Shinobi")
+                    appRunning = false
+                    break;
+                    case "Exit":
+                        console.log('exit')
+                        appRunning = false
+  }
+ }
+}
+
+init()
